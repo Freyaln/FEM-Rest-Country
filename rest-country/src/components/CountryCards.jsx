@@ -13,34 +13,28 @@ export default function CountryCards(props) {
 
     const countryList = props.countryList;
 
-    const styles = {
-        cards: {
-            backgroundColor: '#2b3743',
-            color: '#fff'
-        }
-    }
 
     return (
         <div className='cardsContainer'>
             {countryList.map((item, index) =>
-                <Card sx={{ width: 345 }} key={index} style={styles.cards}>
+                <Card sx={{ width: 345 }} key={index}>
                     <CardMedia
                         component="img"
                         height="200"
                         image={item.flags.svg}
                         alt={item.altSpelling}
                     />
-                    <CardContent>
-                        <Typography style={styles.cards} gutterBottom variant="h5" component="div">
+                    <CardContent className='cards'>
+                        <Typography gutterBottom variant="h5" component="div">
                             {item.name.official}
                         </Typography>
-                        <Typography style={styles.cards} variant="body2" color="text.secondary">
+                        <Typography variant="body2">
                             Population : {item.population}
                         </Typography>
-                        <Typography style={styles.cards} variant="body2" color="text.secondary">
+                        <Typography variant="body2">
                             Region : {item.region}
                         </Typography>
-                        <Typography style={styles.cards} variant="body2" color="text.secondary">
+                        <Typography variant="body2">
                             Capital : {item.capital}
                         </Typography>
                     </CardContent>

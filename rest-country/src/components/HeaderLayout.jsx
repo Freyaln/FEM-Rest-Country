@@ -1,13 +1,13 @@
 import React from "react";
+import HeaderItems from "./HeaderItems";
+import '../styles/Header.css';
 
 const HeaderLayout = (props) => {
 
 
 
-
     const styles = {
         header: {
-            backgroundColor: '#2b3743',
             height: "5rem",
             width: '100%',
         },
@@ -15,8 +15,8 @@ const HeaderLayout = (props) => {
 
     return (
 
-        <header style={styles.header}>
-
+        <header style={styles.header} className='header'>
+            <HeaderItems />
         </header>
 
     )

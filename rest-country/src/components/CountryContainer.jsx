@@ -7,9 +7,10 @@ export default function CountryContainer() {
 
     const [countryList, setCountryList] = useState([]);
     const [pending, setPending] = useState(true);
+    const [listToFetch, setListToFetch] = useState('all');
     const fetchCall = axios.create({
         baseURL: 'https://restcountries.com/v3.1/',
-        timeout: 2000,
+        timeout: 10000,
     })
 
     useEffect(() => {
@@ -18,13 +19,12 @@ export default function CountryContainer() {
 
         (async () => {
 
-            const { data } = await fetchCall.get(`all`, { cache: 'reload' })
+            const { data } = await fetchCall.get(`${listToFetch}`, { cache: 'reload' })
             setCountryList(data);
+
         })();
 
     }, [])
-
-    console.log(countryList)
 
     if (pending === false) {
         return (
