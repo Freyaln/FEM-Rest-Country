@@ -3,17 +3,13 @@ import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import React from "react";
 import { useState } from "react";
 import '../styles/HeaderItems.css';
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./GlobalStyles";
-import { lightTheme, darkTheme } from "./Themes";
 
-export default function HeaderItems() {
+export default function HeaderItems(props) {
 
-    const [viewMode, setViewMode] = useState('Night');
     const [btnText, setBtnText] = useState('Dark Mode');
 
-    const changeBtnText = () => viewMode === 'Light' ? setBtnText('Dark Mode') : setBtnText('Light Mode')
-    const changeViewTheme = () => viewMode === 'Light' ? setViewMode('Night') : setViewMode('Light');
+    const changeBtnText = () => props.viewMode === 'Light' ? setBtnText('Dark Mode') : setBtnText('Light Mode')
+    const changeViewTheme = () => props.viewMode === 'Light' ? props.setViewMode('Night') : props.setViewMode('Light');
 
     const styles = {
         titleNight: {
@@ -32,13 +28,10 @@ export default function HeaderItems() {
     }
 
     return (
-        <ThemeProvider theme={viewMode === 'Light' ? lightTheme : darkTheme}>
-            <>
-                <GlobalStyles />
-                {viewMode === 'Night' && <h1 style={styles.titleNight} className='title'>Where in the world ?</h1>}
-                {viewMode === 'Light' && <h1 style={styles.titleLight} className='title'>Where in the world ?</h1>}
-                <Button style={styles.button} startIcon={<NightlightRoundIcon />} onClick={() => { changeBtnText(); changeViewTheme(); }}>{btnText}</Button>
-            </>
-        </ThemeProvider >
+        <>
+            {props.viewMode === 'Night' && <h1 style={styles.titleNight} className='title'>Where in the world ?</h1>}
+            {props.viewMode === 'Light' && <h1 style={styles.titleLight} className='title'>Where in the world ?</h1>}
+            <Button style={styles.button} startIcon={<NightlightRoundIcon />} onClick={() => { changeBtnText(); changeViewTheme(); }}>{btnText}</Button>
+        </>
     )
 }

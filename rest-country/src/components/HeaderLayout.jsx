@@ -16,7 +16,7 @@ const HeaderLayout = (props) => {
     return (
 
         <header style={styles.header} className='header'>
-            <HeaderItems />
+            <HeaderItems viewMode={props.viewMode} setViewMode={props.setViewMode} />
         </header>
 
     )

@@ -25,17 +25,15 @@ export default function SearchBar(props) {
         })();
     }, [])
 
-    const styles = {
-        searchBar: {
-            color: '#fff'
-        }
+    const handleOnChange = (value) => {
+        props.setListToFetch(value)
     }
 
     if (pending === false) {
         return (
             <Autocomplete sx={{ width: 300 }}
                 isOptionEqualToValue={(countryList, value) => countryList.map((item) => item.name.official) === value} getOptionLabel={(countryList) => countryList} options={countryList.map((item) => item.name.official)} renderInput={(params) => (
-                    <TextField style={styles.searchBar} className='searchBar' {...params} label="Search for a country" InputProps={{
+                    <TextField onChange={() => handleOnChange(`name/${event.target.value}`)} className='searchBar' {...params} label="Search for a country" InputProps={{
                         ...params.InputProps, startAdornment: (
                             <SearchIcon />
                         )

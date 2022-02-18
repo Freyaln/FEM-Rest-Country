@@ -2,12 +2,12 @@ import React from 'react';
 import axios from "axios"
 import { useEffect, useState } from "react"
 import CountryCards from './CountryCards';
+import RegionList from './RegionList';
 
-export default function CountryContainer() {
+export default function CountryContainer(props) {
 
     const [countryList, setCountryList] = useState([]);
     const [pending, setPending] = useState(true);
-    const [listToFetch, setListToFetch] = useState('all');
     const fetchCall = axios.create({
         baseURL: 'https://restcountries.com/v3.1/',
         timeout: 10000,
@@ -19,17 +19,19 @@ export default function CountryContainer() {
 
         (async () => {
 
-            const { data } = await fetchCall.get(`${listToFetch}`, { cache: 'reload' })
+            const { data } = await fetchCall.get(`${props.listToFetch}`, { cache: 'reload' })
             setCountryList(data);
 
         })();
 
-    }, [])
+    }, [props.listToFetch])
 
     if (pending === false) {
         return (
             <>
+
                 <CountryCards countryList={countryList} />
+
             </>
         )
     }

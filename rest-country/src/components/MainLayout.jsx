@@ -1,11 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import CountryContainer from "./CountryContainer";
 import RegionList from "./RegionList";
 import SearchBar from "./SearchBar";
 import "../styles/Main.css";
 
-const MainLayout = (props) => {
+const MainLayout = () => {
 
+    const [listToFetch, setListToFetch] = useState('all');
     const styles = {
         main: {
             height: '100%',
@@ -17,10 +19,10 @@ const MainLayout = (props) => {
 
         <main style={styles.main}>
             <div className='topPanel'>
-                <SearchBar />
-                <RegionList />
+                <SearchBar setListToFetch={setListToFetch} />
+                <RegionList setListToFetch={setListToFetch} />
             </div>
-            <CountryContainer />
+            <CountryContainer listToFetch={listToFetch} />
 
         </main>
     )
