@@ -3,7 +3,6 @@ import React from 'react';
 import axios from "axios"
 import { useEffect, useState } from "react"
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchBar(props) {
@@ -31,15 +30,12 @@ export default function SearchBar(props) {
 
     if (pending === false) {
         return (
-            <Autocomplete sx={{ width: 300 }}
-                isOptionEqualToValue={(countryList, value) => countryList.map((item) => item.name.official) === value} getOptionLabel={(countryList) => countryList} options={countryList.map((item) => item.name.official)} renderInput={(params) => (
-                    <TextField onChange={() => handleOnChange(`name/${event.target.value}`)} className='searchBar' {...params} label="Search for a country" InputProps={{
-                        ...params.InputProps, startAdornment: (
-                            <SearchIcon />
-                        )
-                    }} />
-                )}
-            />
+
+            <TextField onChange={() => handleOnChange(`name/${event.target.value}`)} className='searchBar' label="Search for a country" InputProps={{
+                startAdornment: (
+                    <SearchIcon />
+                )
+            }} />
         )
     }
 

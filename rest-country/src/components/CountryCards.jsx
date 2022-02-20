@@ -1,13 +1,10 @@
 import React from 'react';
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import '../styles/countryCards.css';
 import CountriesModals from './CountriesModal';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function CountryCards(props) {
@@ -20,11 +17,10 @@ export default function CountryCards(props) {
         setShowModal(true);
         setCountrySelected(value);
     }
-
     return (
         <div className='cardsContainer'>
             {countryList.map((item, index) =>
-                <Card sx={{ width: 345 }} key={index} onClick={() => handleClick([item.capital, item.flags.svg, item.population, item.region])}>
+                <Card sx={{ width: 345 }} key={index} onClick={() => handleClick([item.capital, item.flags.svg, item.population, item.region, item.name.official, item.name.common, item.subregion, item.tld, item.currencies, item.languages, item.borders])}>
                     <CardMedia
                         component="img"
                         height="200"

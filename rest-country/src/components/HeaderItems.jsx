@@ -6,9 +6,9 @@ import '../styles/HeaderItems.css';
 
 export default function HeaderItems(props) {
 
-    const [btnText, setBtnText] = useState('Dark Mode');
+    const [btnText, setBtnText] = useState('Light Mode');
 
-    const changeBtnText = () => props.viewMode === 'Light' ? setBtnText('Dark Mode') : setBtnText('Light Mode')
+    const changeBtnText = () => props.viewMode === 'Light' ? setBtnText('Light Mode') : setBtnText('Dark Mode')
     const changeViewTheme = () => props.viewMode === 'Light' ? props.setViewMode('Night') : props.setViewMode('Light');
 
     const styles = {
