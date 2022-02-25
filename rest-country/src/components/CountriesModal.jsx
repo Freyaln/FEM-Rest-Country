@@ -36,6 +36,8 @@ export default function CountriesModals(props) {
         setOpen(false);
         props.setShowModal(false);
     }
+
+    console.log(props.countrySelected[10])
     let currencies = [];
     currencies.push(props.countrySelected[8]);
     currencies = Object.values(currencies[0]);
@@ -57,7 +59,7 @@ export default function CountriesModals(props) {
                         {props.countrySelected[5]}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }} >
-                        Population : {Number(props.countrySelected[2]).toLocaleString('')}
+                        Population : {Number(props.countrySelected[2]).toLocaleString()}
                     </Typography>
                     <Typography id="modal-modal-description">
                         Region : {props.countrySelected[3]}
