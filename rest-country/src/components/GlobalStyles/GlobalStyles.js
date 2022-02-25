@@ -34,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
   .css-i4bv87-MuiSvgIcon-root{
     color: ${({ theme }) => theme.text}};
   };
-  .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  .css-1ujsas3 {
     color: ${({ theme }) => theme.text}};
   };
   .css-24b8ux {
