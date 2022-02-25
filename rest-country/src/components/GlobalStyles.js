@@ -28,6 +28,9 @@ export const GlobalStyles = createGlobalStyle`
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     color: ${({ theme }) => theme.text}};
   };
+  .css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input {
+    color: ${({ theme }) => theme.text}};
+  };
   .css-i4bv87-MuiSvgIcon-root{
     color: ${({ theme }) => theme.text}};
   };

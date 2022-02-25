@@ -32,7 +32,7 @@ export default function CountryCards(props) {
                             {item.name.official}
                         </Typography>
                         <Typography variant="body2">
-                            Population : {item.population}
+                            Population : {item.population.toLocaleString()}
                         </Typography>
                         <Typography variant="body2">
                             Region : {item.region}
