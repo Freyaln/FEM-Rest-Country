@@ -1,6 +1,6 @@
 import React from "react";
-import HeaderItems from "./HeaderItems";
-import '../styles/Header.css';
+import HeaderItems from "../Header/HeaderItems";
+import '../../styles/Header.css';
 
 const HeaderLayout = (props) => {
 

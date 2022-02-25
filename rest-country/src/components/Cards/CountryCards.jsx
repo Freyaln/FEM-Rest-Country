@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-import '../styles/countryCards.css';
-import CountriesModals from './CountriesModal';
+import '../../styles/countryCards.css';
+import CountriesModals from '../Modals/CountriesModal';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';

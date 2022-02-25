@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import React from "react";
 import { useState } from "react";
-import '../styles/HeaderItems.css';
+import '../../styles/HeaderItems.css';
 
 export default function HeaderItems(props) {
 

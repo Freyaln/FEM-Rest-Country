@@ -3,8 +3,8 @@ import HeaderLayout from "./HeaderLayout";
 import MainLayout from "./MainLayout";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./GlobalStyles";
-import { lightTheme, darkTheme } from "./Themes";
+import { GlobalStyles } from "../GlobalStyles/GlobalStyles";
+import { lightTheme, darkTheme } from "../GlobalStyles/Themes";
 
 const Layout = (props) => {
 

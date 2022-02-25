@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import CountryContainer from "./CountryContainer";
-import RegionList from "./RegionList";
-import SearchBar from "./SearchBar";
-import "../styles/Main.css";
+import CountryContainer from "../Cards/CountryContainer";
+import RegionList from "../FilterByRegion/RegionList";
+import SearchBar from "../Searchbar/SearchBar";
+import "../../styles/Main.css";
 
 const MainLayout = () => {
 
