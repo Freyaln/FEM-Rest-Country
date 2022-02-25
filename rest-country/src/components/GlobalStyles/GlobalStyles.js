@@ -28,10 +28,10 @@ export const GlobalStyles = createGlobalStyle`
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     color: ${({ theme }) => theme.text}};
   };
-  .css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input {
+  .css-1ixds2g {
     color: ${({ theme }) => theme.text}};
   };
-  .css-i4bv87-MuiSvgIcon-root{
+  .css-vubbuv {
     color: ${({ theme }) => theme.text}};
   };
   .css-1ujsas3 {
