@@ -36,8 +36,6 @@ export default function CountriesModals(props) {
         setOpen(false);
         props.setShowModal(false);
     }
-
-    console.log(props.countrySelected[10])
     let currencies = [];
     currencies.push(props.countrySelected[8]);
     currencies = Object.values(currencies[0]);
